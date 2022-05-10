@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ThriftyDbContextConnection"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ThriftyDataContextConnection"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ThriftyDatabaseContext"
+    }
+  }
+}

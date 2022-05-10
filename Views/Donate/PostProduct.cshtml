@@ -1,0 +1,119 @@
+﻿@model ProductModel
+@{
+    ViewData["Title"] = "PostProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="card card-body col-11 col-sm-10 col-md-9 col-lg-7 mx-auto transparent specialCard">
+            <h3 class="font-weight-bold text-uppercase text-center">Keep Donating!</h3>
+            <form method="post" enctype="multipart/form-data" asp-antiforgery="true" asp-action="PostProduct" asp-controller="Donate">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row">
+                    <!--Product Name-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pName" class="control-label">Give a nice name of your product</label>
+                        <input asp-for="pName" class="form-control" placeholder="Give a nice name of your product" />
+                        <span asp-validation-for="pName" class="text-danger"></span>
+                    </div>
+                    <!--Product Section-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pSection">In which section the product belongs to?</label>
+                        <select asp-for="pSection" class="form-control">
+                            <option selected disabled>Select the section of the product</option>
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
+                            <option value="Kids">Kids</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <span asp-validation-for="pSection" class="text-danger"></span>
+                    </div>
+                    <!--Product Type-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pType">What is the type of the product?</label>
+                        <input asp-for="pType" class="form-control" placeholder="Ex. Shirt, Pant, Saree, Frock, Blacket etc." />
+                        <span asp-validation-for="pType" class="text-danger"></span>
+                    </div>
+                    <!--Product Fabric-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pFabric">What is the fabric or material of the product?</label>
+                        <select asp-for="pFabric" class="form-control">
+                            <option selected disabled>Select the fabric / material name of the product</option>
+                            <option value="Unknown">Unknown</option>
+                            <option value="Cotton">Cotton</option>
+                            <option value="Polyester">Polyester</option>
+                            <option value="Chiffon">Chiffon</option>
+                            <option value="Silk">Silk</option>
+                            <option value="Georgette">Georgette</option>
+                            <option value="Linen">Linen</option>
+                            <option value="Denim">Denim</option>
+                            <option value="Wool">Wool</option>
+                            <option value="Synthetic">Synthetic</option>
+                            <option value="Velvet">Velvet</option>
+                            <option value="Viscose">Viscose</option>
+                            <option value="Net">Net</option>
+                        </select>
+                        <span asp-validation-for="pFabric" class="text-danger"></span>
+                    </div>
+                    <!--Product Size-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pSize">What is the size of the product?</label>
+                        <select asp-for="pSize" class="form-control">
+                            <option selected disabled class="text-muted">Select the size of the product</option>
+                            <option value="Unknown">Unknown</option>
+                            <option value="XS">XS / (No.30)</option>
+                            <option value="S">S / (No.32)</option>
+                            <option value="M">M / (No.34)</option>
+                            <option value="L">L / (No.36)</option>
+                            <option value="XL">XL / (No.38)</option>
+                            <option value="XXL">XXL / (No.40)</option>
+                            <option value="P">P / (No.40+)</option>
+                        </select>
+                        <span asp-validation-for="pSize" class="text-danger"></span>
+                    </div>
+                    <!--Product Color-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pColor">What is the color of the product?</label>
+                        <input asp-for="pColor" class="form-control" placeholder="Ex. Red, Black, Blue, Pink etc." />
+                        <span asp-validation-for="pColor" class="text-danger"></span>
+                    </div>
+                    <!--Product Fashion-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pFashion">In which fashion or style the product belongs to?</label>
+                        <select asp-for="pFashion" class="form-control">
+                            <option selected disabled class="text-muted">Select the fashion / style of the product</option>
+                            <option value="Unknown">Unknown</option>
+                            <option value="Casual">Casual Wear</option>
+                            <option value="Ethnic Style">Ethnic Look</option>
+                            <option value="Office Wear">Office Wear</option>
+                            <option value="Party Wear">Party Wear</option>
+                            <option value="Western">Western</option>
+                            <option value="Winter Fashion">Winter Fashion</option>
+                            <option value="Formal Look">Formal Look</option>
+                            <option value="Vintage">Vintage Fashion</option>
+                            <option value="Sports Wear">Sports Wear</option>
+                        </select>
+                        <span asp-validation-for="pFashion" class="text-danger"></span>
+                    </div>
+                    <!--Product Condition-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pCondition">How many times/days/months/years the product has been used?</label>
+                        <input asp-for="pCondition" class="form-control" placeholder="Specify(Ex. 2 Times Used/ 2 Months Used/ 2 Years Used/ Unused)" />
+                        <span asp-validation-for="pCondition" class="text-danger"></span>
+                    </div>
+                    <!--Product Image-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="pImage" class="control-label">Choose photo for your product</label>
+                        <div class="col-md-12">
+                            <input class="form-control" type="file" name="pic" accept="image/*" required=""/>
+                        </div>                        
+                    </div>
+                    <!--Post Button-->
+                    <div class="form-group col-2 mx-auto">
+                        <input type="submit" value="Post" class="btn btn-success font-weight-bold" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

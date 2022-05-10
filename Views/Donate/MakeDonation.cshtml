@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "MakeDonation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1 class="text-center text-justify font-weight-bolder mb-4">Lighter closet.<br />Fresher style. Brighter planet.</h1>
+    <h5 class="text-uppercase text-center my-4">How It Works to become a Donator</h5>
+    <h3 class="font-weight-bold text-uppercase text-center my-4">It’s free and seriously easy to clean out your closet with THRIFTY</h3>
+    <div class="row text-center">
+        <!--Step-1-->
+        <div class="col-12 mx-auto">
+            <img src="~/images/Home/step-1.jpg" class="step-donate img-thumbnail rounded-circle" />
+            <p class="font-weight-bold font-italic">1. Choose your unnessary clothes</p>
+        </div>
+        <!--Step-2-->
+        <div class="col-12 my-auto">
+            <img src="~/images/Home/step-2.jpg" class="step-donate img-thumbnail rounded-circle" />
+            <p class="font-weight-bold font-italic">2. Post about that clothes</p>
+        </div>
+        <!--Step-3-->
+        <div class="col-12 my-auto">
+            <img src="~/images/Home/step-3.jpg" class="step-donate img-thumbnail rounded-circle" />
+            <p class="font-weight-bold font-italic">3. Wait for our pickup service</p>
+        </div>
+        <!--Step-4-->
+        <div class="col-12 my-auto">
+            <img src="~/images/Home/step-4.jpg" class="step-donate img-thumbnail rounded-circle" />
+            <p class="font-weight-bold font-italic">4. Relax you are out necessay things and do more good deed like this</p>
+        </div>
+        <div class="col-12 my-auto">
+            <!--Donation Button-->
+            <div class="btn btn-instagram font-weight-bold my-5">
+                <a class="text-decoration-none text-white" asp-controller="Donate" asp-action="PostProduct">Make a Donation</a>
+            </div>
+        </div>
+    </div>
+</div>

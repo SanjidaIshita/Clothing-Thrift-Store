@@ -1,0 +1,62 @@
+﻿@model PaymentModel
+@{
+    ViewData["Title"] = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="card card-body col-11 col-sm-10 col-md-9 col-lg-7 mx-auto specialCard">
+            <h3 class="font-weight-bold text-uppercase text-center">Place Order!</h3>
+            <form method="post"asp-action="PlaceOrder" asp-controller="Order">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row">
+                    <!--User Name-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="UserName" class="control-label">Your Name</label>
+                        <input asp-for="UserName" class="form-control" placeholder="Name" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <!--User Product No-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="ProductId">What is your product no?</label>
+                        <input asp-for="ProductId" class="form-control" placeholder="Product No" />
+                        <span asp-validation-for="ProductId" class="text-danger"></span>
+                    </div>
+                    <!--User Address-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="Address">Your Address</label>
+                        <input asp-for="Address" class="form-control" placeholder="Address" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <!--User Email-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="Email">Your Email</label>
+                        <input asp-for="Email" class="form-control" placeholder="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <!--User PhoneNo-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="PhoneNo">Your Phone Number</label>
+                        <input asp-for="PhoneNo" class="form-control" placeholder="Phone Number" type="tel" />
+                        <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                    </div>
+                    <!--Payment Method-->
+                    <div class="form-group col-lg-12 mb-4">
+                        <label asp-for="PaymentMethod">Payment Method</label>
+                        <select asp-for="PaymentMethod" class="form-control">
+                            <option selected disabled>Select Payment Method</option>
+                            <option value="Cash on delivery">Cash on delivery</option>
+                            <option value="Online">Online</option>
+                        </select>
+                        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                    </div>
+                    <!--Place Order Button-->
+                    <div class="form-group col-2 mx-auto">
+                        <input type="submit" value="Order" class="btn btn-success font-weight-bold" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

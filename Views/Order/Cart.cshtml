@@ -1,0 +1,74 @@
+﻿@model ProductModel
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="font-weight-bold text-uppercase text-center">Shopping Cart</h3>
+<section class="container">
+    <div class="row">
+        <div class="col-lg-8 px-5">
+            <h5 class="mb-4 font-weight-bold">My Order</h5>
+            <hr />            
+            <div class="row mb-4">
+                <div class="col-md-5 col-lg-3 col-xl-3">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <img class="bd-placeholder-img embed-responsive-item" src="~/@Model.pImage" alt="orderList" />
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-9 col-xl-9">
+                    <div>
+                        <!--Ordered Product Info-->
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h5>@Model.pName</h5>
+                                <p class="mb-1 text-muted small">Section: @Model.pSection</p>
+                                <p class="mb-0 text-muted small">Type: @Model.pType</p>
+                                <p class="mb-0 text-muted small">Color: @Model.pColor</p>
+                                <p class="mb-3 text-muted small">Size: @Model.pSize</p>
+                            </div>
+                            <div>
+                                <p class="mb-0"><span class="font-weight-bold">x @Model.pQuantity</span></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!--Delete Order Button-->
+                            <div>
+                                <a asp-controller="Product" asp-action="AllProduct" class="btn btn-outline-danger small text-uppercase mr-3">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <p class="mb-0"><span class="font-weight-bold">BDT @Model.pPrice</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-4">
+            <!--Order Time-->
+            <div class=" col-12 mb-3 mx-auto font-italic font-weight-bold">
+                <p>Order Date: @DateTime.Now</p>
+            </div>                            
+        </div>
+        <!--Order Details-->
+        <div class="col-lg-4 row px-4">
+            <h5 class="font-weight-bold pl-3">Order Details</h5>
+            <!--Order Info-->
+            <div class="col-12">
+                <ul class="list-group list-group-flush specialCard">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <p class="font-weight-bold">Total Quantity:</p>
+                        <span class="text-monospace">x @Model.pQuantity</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <p class="font-weight-bold">Total Amount:</p>
+                        <span class="text-monospace">Tk. @Model.pPrice</span>
+                    </li>
+                </ul>
+            </div>
+            <!--Checkout Button-->
+            <div class="col-4 my-2 mx-auto">
+                <a asp-controller="Order" asp-action="ConfirmOrder" asp-route-id="@Model.pId" class="btn btn-instagram text-white font-weight-bold">Checkout</a>
+            </div>
+        </div>
+    </div>
+</section>

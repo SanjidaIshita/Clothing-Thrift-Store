@@ -1,0 +1,245 @@
+﻿* {
+    font-family: Arial, Calibri, serif;
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    margin-top: 5px;
+    min-width: 70vw;
+    background: -webkit-linear-gradient(to top, #a8edea 0%, #fed6e3 80%, #ffffff 100%);
+    background: -moz-linear-gradient(to top, #a8edea 0%, #fed6e 80%, #ffffff 100%);
+    background: -o-linear-gradient(to top, #a8edea 0%, #fed6e3 80%, #ffffff 100%);
+    background: linear-gradient(to top, #a8edea 0%, #fed6e3 80%, #ffffff 100%);
+}
+
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.specialCard {
+    margin: 5% auto;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.transparent {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.transparent:hover, .transparent:focus {
+    transition: all 1s;
+    transform: scale(1.1, 1.1);
+    background: rgba(226, 211, 206, 0.5);
+}
+
+.transparent img {
+    width: 150px;
+    border-radius: 40%;
+    margin-bottom: 5%;
+}
+
+.navbar {
+    background: #fff;
+}
+
+.dropdown-menu {
+    
+    min-width: 60px !important;
+    padding-right:0px;
+}
+
+.option {
+    background: #a8edea;
+    
+}
+
+#header-nav1 {
+    font-weight: 600;
+    background: -webkit-linear-gradient(15deg, #13547a 0%, #80d0c7 80%);
+    background: -moz-linear-gradient(15deg, #13547a 0%, #80d0c7 80%);
+    background: -o-linear-gradient(15deg, #13547a 0%, #80d0c7 80%);
+    background: linear-gradient(15deg, #13547a 0%, #80d0c7 80%);
+    font-size: 12px;
+    z-index: 2000 !important;
+    opacity:0.9;
+}
+
+#header-nav2 {
+    font-weight: 600;
+    background: -webkit-linear-gradient(to left, #13547a 0%, #80d0c7 80%);
+    background: -moz-linear-gradient(to left, #13547a 0%, #80d0c7 80%);
+    background: -o-linear-gradient(to left, #13547a 0%, #80d0c7 80%);
+    background: linear-gradient(to left, #13547a 0%, #80d0c7 80%);
+    font-size: 12px;
+    z-index: -1 !important;
+    opacity: 0.9;
+}
+
+main {
+    margin-top: 10%;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.navbar-brand span {
+    position: relative;
+    bottom: 10%;
+    left: 50%;
+    color: white;
+    font-family: serif;
+    font-size: 5vh;
+    margin: -50%;
+    text-shadow: 3px 3px 3px #222222;
+    text-decoration: none;
+}
+
+.navbar-toggler-icon:active {
+    color: black;
+}
+
+#nav-list.nav-item {
+    text-align: center;
+}
+
+.nav-item {
+    color: black;
+    padding: 0 10px;
+}
+
+#nav-list  {
+    text-align: center;
+}
+
+.nav-item:hover {
+        transform: scale(1.1, 1.1);
+        background: rgba(248, 248, 248, 0.2);
+        margin: 0 5px;
+        color: black;
+        border-radius: 10%;
+}
+
+.active {
+    border-radius: 4%;
+    color: black;
+    background: #8476b2;
+    opacity: 0.9;
+}
+
+.carousel-item, .carousel-item img{
+    height: 400px !important; 
+}
+
+/* Sticky footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.btn-facebook {
+    background: #405D9D;
+}
+
+.btn-facebook:hover, .btn-facebook:focus {
+    background: #314879;
+}
+
+.btn-twitter {
+    background: #42AEEC;
+}
+
+.btn-twitter:hover, .btn-twitter:focus {
+     background: #1799e4;
+}
+
+.btn-instagram {
+    background: #b12ea1;
+}
+
+.btn-instagram:hover, .btn-instagram:focus {
+    background: #932086;
+}
+
+#specialCard {
+    margin: 9% auto;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.form-control::placeholder {
+    color: gray;
+    opacity: 0.6;
+}
+
+.form-control:hover, .form-control:focus {
+   box-shadow: none;
+}
+
+select option {
+   background-color: aliceblue;
+}
+
+/*Start Donation Page*/
+.step-donate{
+    width:200px;
+    height:200px;
+}
+/*End Donation Page*/
+
+/***Differnt screens****/
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/*upto x small screen*/
+@media (max-width:575px) {
+    main {
+        padding-top: 14%;
+    }
+
+    .bg-signup, .bg-login {
+        display: none;
+    }
+}
+
+/*upto small screen*/
+@media (min-width:576px) and (max-width:766px) {
+    main {
+        padding-top: 11%;
+    }
+}
+
+/*upto mediam screen*/
+@media (min-width:767px) and (max-width:991px) {
+    main {
+        padding-top: 10%;
+    }
+}

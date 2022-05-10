@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ContactModel>
+@{
+    ViewData["Title"] = "ContactMessages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 class="font-weight-bold text-uppercase text-center text-monospace col-12 pb-4">Feedback Information</h2>
+    <!--All Feedbacks Information Table-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Contact Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Messages</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var info in Model)
+            {
+                <tr>
+                    <th scope="row">@info.Id</th>
+                    <td>@info.Name</td>
+                    <td>@info.Email</td>
+                    <td>@info.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

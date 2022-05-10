@@ -1,0 +1,67 @@
+﻿@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="card card-body col-11 col-sm-10 col-md-9 col-lg-7 mx-auto p-5 specialCard">
+            <h3 class="font-weight-bold text-uppercase text-center my-4">Contact With Us</h3>
+            <!--Contact Info-->
+            <div id="contact" class="col-5 mx-auto">
+                <!--Call Us-->
+                <a href="tel: 019999">
+                    <i class="fa fa-phone" aria-hidden="true">
+                        <span class="small font-italic  text-primary">+8801222557590</span>
+                    </i>
+                </a>
+                <!--Email Us-->
+                <a href="mailto: thrifty@gmail.com">
+                    <i class="fa fa-envelope" aria-hidden="true">
+                        <span class="small font-italic  text-primary">thrifty@gmail.com</span>
+                    </i>
+                </a>
+            </div>
+            <hr />
+            <form method="post" asp-action="Contact" asp-controller="Home">
+                <div class="row asp-validation-summary=" All"">
+                    <div asp-validation-summary="ModelOnly" class="row text-danger"></div>
+                    <!--Name-->
+                    <div class="form-group col-9 col-md-10 col-lg-9 mx-auto my-3">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <!--Email-->
+                    <div class="form-group col-9 col-md-10 col-lg-9 mx-auto my-3">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <!--Feedback-->
+                    <div class="form-group col-9 col-md-10 col-lg-9 mx-auto my-3">
+                        <label asp-for="Message" class="control-label"></label>
+                        <input asp-for="Message" class="form-control" />
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                    <!--Send Button-->
+                    <div class="form-group col-4 mx-auto">
+                        <input type="submit" value="Submit" class="btn btn-success font-weight-bold" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Our Location Map-->
+        <h3 class="col-12 text-center text-capitalize pb-2 font-weight-bold">Our Location</h3>
+        <div class="col-12 ml-5">
+            <a href="https://goo.gl/maps/G6Pj5eKXNX5nhVYP9" target="_blank">
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5387581242967!2d90.40448511498161!3d23.763821984582734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77decb5f845%3A0xc2eadd2f3b867792!2sAhsanullah%20University%20of%20Science%20and%20Technology!5e0!3m2!1sen!2sbd!4v1616072394180!5m2!1sen!2sbd" class="w-100 vh-100" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

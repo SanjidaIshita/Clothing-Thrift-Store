@@ -1,0 +1,54 @@
+﻿@model ProductModel
+
+@{
+    ViewData["Title"] = "ProductDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3 class="font-weight-bold text-uppercase text-center py-5">Product details</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <!--Product Image-->
+            <div class="embed-responsive embed-responsive-1by1">
+                <img class="bd-placeholder-img embed-responsive-item" src="~/@Model.pImage" alt="Product Image" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.pName</h1>
+                </div>
+            </div>
+            <!--Product Details Section-->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <span class="monospaced">Section: @Model.pSection</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-capitalize font-weight-bold text-danger">Price: BDT @Model.pPrice</p>
+                </div>
+            </div>
+            <!--Cart Button-->
+            <div>
+                <div class="text-center">
+                    <a asp-controller="Order" asp-action="Cart" asp-route-id=@Model.pId class="btn btn-info font-weight-bold">Add to Cart</a>
+                </div>
+            </div>
+            <hr />
+            <!--Product Info in detail-->
+            <ul class="list-group">
+                <li class="list-group-item bg-transparent"><span class="font-weight-bold">Type : </span> @Model.pType</li>
+                <li class="list-group-item bg-transparent"><span class="font-weight-bold">Fabric : </span> @Model.pFabric</li>
+                <li class="list-group-item bg-transparent"><span class="font-weight-bold">Size : </span> @Model.pSize</li>
+                <li class="list-group-item bg-transparent"><span class="font-weight-bold">Color : </span> @Model.pColor</li>
+                <li class="list-group-item bg-transparent"><span class="font-weight-bold">Fashion : </span> @Model.pFashion</li>
+                <li class="list-group-item bg-transparent"><span class="font-weight-bold">Condition : </span> @Model.pCondition</li>
+            </ul>
+        </div>
+    </div>
+</div>
+

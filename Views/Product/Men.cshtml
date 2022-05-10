@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ProductModel>
+@{
+    ViewData["Title"] = "Men";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="py-5 bg-transparent">
+    <div class="container">
+        <div class="row">
+            <!--Search Products-->
+            <div class="col-12">
+                <form method="post" asp-action="SearchProduct" asp-controller="Product" class="mx-auto">
+                    <div class="row pb-5 justify-content-center">
+                        <!--Search Box-->
+                        <div class="col-6 col-lg-4 mt-1">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Search Products" name="searchBox" />
+                            </div>
+                        </div>
+                        <!--Search Button-->
+                        <div class="col-2 mt-1 form-group">
+                            <input name="searchBtn" type="submit" value="Search" class="btn btn-success font-weight-bold" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--Men's Product Collection-->
+            <h3 class="font-weight-bold text-uppercase text-center col-12 pb-3">Men's  Collection</h3>
+            @foreach (var product in Model)
+            {
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <!--Product Info Card-->
+                    <div class="card mb-4 shadow-sm">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <img class="bd-placeholder-img card-img-top embed-responsive-item" src="~/@product.pImage" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">@product.pName</h4>
+                            <p class="text-muted text-center small">Section: @product.pSection <br />  BDT @product.pPrice</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <!--Cart Button-->
+                                <div class="btn-group">
+                                    <a asp-controller="Order" asp-action="Cart" asp-route-id="@product.pId" class="btn btn-sm btn-warning px-4"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+                                </div>
+                                <!--View Details Button-->
+                                <div class="btn-group">
+                                    <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@product.pId" class="btn btn-sm btn-outline-info">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

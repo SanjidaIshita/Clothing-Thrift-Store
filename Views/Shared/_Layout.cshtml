@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>@ViewData["Title"] - Thrifty</title>
+    <link type="text/css" rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/site.css" />
+    <link type="text/css" rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+</head>
+<body>
+    <header class="fixed-top">
+        <!--1st Navbar-->
+        <nav class="navbar navbar-expand navbar-light shadow-sm" id="header-nav1">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <span class="font-weight-bold">Thrifty</span>
+                </a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" id="nav1">
+                    <ul class="navbar-nav flex-grow-2 ml-auto" id="nav-list">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">
+                                <i class="fa fa-home" aria-hidden="true"></i>&nbsp;<br class="d-none d-sm-block" />Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle text-dark" id="navbardrop" data-toggle="dropdown">
+                                <i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;<br class="d-none d-sm-block" />Category
+                            </a>
+                            <div class="dropdown-menu option">
+                                <a class="dropdown-item" asp-controller="Donate" asp-action="MakeDonation">Donate</a>
+                                <a class="dropdown-item" asp-controller="Product" asp-action="AllProduct">Shop</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="About">
+                                <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;<br class="d-none d-sm-block" />About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Contact">
+                                <i class="fa fa-comment" aria-hidden="true"></i>&nbsp;<br class="d-none d-sm-block" />Contact Us
+                            </a>
+                        </li>
+                        <partial name="_LoginPartial.cshtml" />
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--2nd Navbar-->
+        <nav class="navbar navbar-expand navbar-light shadow-sm" id="header-nav2">
+            <div class="container-fluid">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-content-md-start" id="nav1">
+                    <ul class="navbar-nav flex-grow-2 mr-auto align-content-md-start" id="nav-list">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark py-0" asp-controller="Product" asp-action="Men">Men</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark py-0" asp-controller="Product" asp-action="Women">Women</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark py-0" asp-controller="Product" asp-action="Kids">Kids</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark py-0" asp-controller="Product" asp-action="Others">Others</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>   
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>   
+    <hr />
+    <footer class="container">
+        <div id="footer-sections" class="row">
+            <section class="col-sm-4  text-black-50">
+                <span class="font-weight-bold pb-1">Service:</span><br />
+                <p class="text-justify">
+                    <span class="font-weight-bold pb-1">Categories:</span><br />
+                    <a asp-area="" asp-controller="Product" asp-action="Men" class="text-decoration-none text-dark">Men</a><br />
+                    <a asp-area="" asp-controller="Product" asp-action="Women" class="text-decoration-none text-dark">Women</a><br />
+                    <a asp-area="" asp-controller="Product" asp-action="Kids" class="text-decoration-none text-dark">Kids</a><br />
+                    <a asp-area="" asp-controller="Product" asp-action="Others" class="text-decoration-none text-dark">Others</a><br />
+                </p>
+                <span class="pb-1">
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                </span><br />
+                <span class="pb-1">
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Return Policy</a>
+                </span><br />
+                <hr class="d-block d-sm-none">
+            </section>
+            <section class="col-sm-4 text-black-50">
+                <span class="font-weight-bold">Contact Us:</span><br />
+                <a href="mailto: thrifty@gmail.com" class="text-decoration-none text-success">thrifty@gmail.com</a>
+                <br />
+                <div class="pt-2">
+                    <a href="tel:019999">
+                        <i class="fa fa-phone" aria-hidden="true">
+                            <span class="small font-italic text-success">+8801116557590</span>
+                        </i>
+                    </a>
+                </div>
+            </section>
+            <section class="col-sm-4 text-black-50 jus">
+                <span class="font-weight-bold pb-1"><a asp-area="" asp-controller="Home" asp-action="Admin" class="text-decoration-none text-danger text-uppercase">Admin</a></span><br />
+                <span class="font-weight-bold py-2"><a asp-area="" asp-controller="Home" asp-action="About" class="text-decoration-none text-dark">About Us</a></span><br />
+                <p class="text-justify"></p>
+                <hr class="d-block d-sm-none">
+                <span class="font-weight-bold pb-1">Address:</span>
+                <address class="text-justify">
+                    7105 Happyhomes, Kunipara<br />Tejgaon, Dhaka
+                </address>
+            </section>
+        </div>
+        <hr />
+        <ul class="list-inline text-center">
+            <li class="list-inline-item">
+                <a href="https://www.facebook.com" target="_blank" class="btn btn-primary btn-block btn-facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.twitter.com" target="_blank" class="btn btn-primary btn-block btn-twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.pinterest.com" target="_blank" class="btn btn-danger btn-block btn-pinterest">
+                    <i class="fa fa-pinterest"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.linkedin.com" target="_blank" class="btn btn-info btn-block btn-linkedin">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="text-center">
+            &copy; @DateTime.Now.Year - <a asp-area="" asp-controller="Home" asp-action="Privacy">Thrifty</a> | All Rights Reserved
+        </div>
+    </footer>
+    
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/popper.js/umd/popper.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

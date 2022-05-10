@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PaymentModel>
+@{
+    ViewData["Title"] = "OrderInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 class="font-weight-bold text-uppercase text-center text-monospace col-12 pb-4">Order Information</h2>
+    <!--All Orders Information Table-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Payment Id</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var info in Model)
+            {
+                <tr>
+                    <th scope="row">@info.PaymentId</th>
+                    <td>@info.UserName</td>
+                    <td>@info.Email</td>
+                    <td>@info.Address</td>
+                    <td>@info.PhoneNo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

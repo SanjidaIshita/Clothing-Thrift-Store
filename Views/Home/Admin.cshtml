@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PaymentModel>
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 class="font-weight-bold text-uppercase text-center text-monospace col-12 pb-4">Admin Account</h2>
+    <div class="row justify-content-center">
+        <!--Order Information Button-->
+        <div class="col-6 btn-group mx-5 p-3">
+            <a asp-controller="Home" asp-action="OrderInformation" class="btn btn-sm btn-outline-dark font-weight-bold">Order Information</a>
+        </div>
+        <!--Feedback Information Button-->
+        <div class="col-6 btn-group mx-5 p-3">
+            <a asp-controller="Home" asp-action="FeedbackInformation" class="btn btn-sm btn-outline-dark font-weight-bold">Feedback Information</a>
+        </div>
+    </div>
+</div>

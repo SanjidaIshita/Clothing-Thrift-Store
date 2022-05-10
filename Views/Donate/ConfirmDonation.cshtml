@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "ConfirmDonation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h3 class="font-weight-bold text-uppercase text-center my-4">Donation Confirmed!</h3>
+    @if (ViewBag.IsSuccess == true)
+    {
+        <!--Donation Successful Message-->
+        <div class="alert alert-success mx-auto text-center" role="alert">
+            <h4 class="alert-heading">Well Done! Donation Completed.</h4>
+            <p>
+                Your product has been successfully donated.
+                <!--Click Here Button-->
+                <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@ViewBag.DonationId" class="font-italic font-weight-bold">CLICK HERE</a> to view your product.
+            </p>
+            <hr>
+            <p class="mb-0">Thank you for your support. Keep Donating!</p>
+        </div>
+    }
+    else
+    {
+        <!--Donation Unsuccessful Message-->
+        <div class="alert alert-danger mx-auto text-center" role="alert">
+            <h4 class="alert-heading">Sorry for the inconvenience!</h4>
+            <p>Kindly try again to donate this product. </p>
+            <hr>
+            <p class="mb-0">Thank you for your support. Keep Donating!</p>
+        </div>
+    }
+    <!--Post Product Again Button-->
+    <div class="text-center mx-auto mt-4">
+        <span>Do you want to donate again?</span><br />
+        <a asp-controller="Donate" asp-action="PostProduct" class="btn btn-instagram font-italic font-weight-bold my-3 text-white">Make Another Donation</a>
+    </div>
+
+</div>
