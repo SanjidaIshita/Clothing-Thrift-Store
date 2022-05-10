@@ -14,6 +14,7 @@ price.
 
 Features:
 1.User registration process, double user registration and exception is handled.
+
 2.Double user authorization as per role. Admin role is authorized for admin
 account and user role is authorized for user account, cart and order processes
 pages.
